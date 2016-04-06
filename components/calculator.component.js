@@ -35,7 +35,11 @@ angular.module('app')
   })
 
 function CalculatorController() {
-  var vm = this;
+  var vm = this,
+      PLUS = '+',
+      MINUS = '-',
+      MULTIPLY = '*',
+      DIVIDE = '/';
 
   vm.currentEnteredValue = '';
   vm.operation = '';
@@ -43,16 +47,16 @@ function CalculatorController() {
 
   function calculate() {
     switch (vm.operation) {
-      case '+':
+      case PLUS:
         vm.result = parseFloat(vm.result) + parseFloat(vm.currentEnteredValue);
         break;
-      case '-':
+      case MINUS:
         vm.result = parseFloat(vm.result) - parseFloat(vm.currentEnteredValue);
         break;
-      case '*':
+      case MULTIPLY:
         vm.result = parseFloat(vm.result) * parseFloat(vm.currentEnteredValue);
         break;
-      case '/':
+      case DIVIDE:
         vm.result = parseFloat(vm.result) / parseFloat(vm.currentEnteredValue);
         break;
     }
@@ -68,22 +72,22 @@ function CalculatorController() {
 
   vm.plus = function() {
     makeOperation();
-    vm.operation = '+';
+    vm.operation = PLUS;
   }
 
   vm.minus = function() {
     makeOperation();
-    vm.operation = '-';
+    vm.operation = MINUS;
   }
 
   vm.multiply = function() {
     makeOperation();
-    vm.operation = '*';
+    vm.operation = MULTIPLY;
   }
 
   vm.divide = function() {
     makeOperation();
-    vm.operation = '/';
+    vm.operation = DIVIDE;
   }
 
   vm.equal = function() {
