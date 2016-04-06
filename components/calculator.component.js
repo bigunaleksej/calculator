@@ -97,7 +97,7 @@ function CalculatorController() {
     }
 
     if (!vm.operation) {
-      vm.result = vm.currentEnteredValue;
+      vm.result = parseFloat(vm.currentEnteredValue);
     }
   }
 }
